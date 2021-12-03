@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Ladle</title>
+        <link href="https://storage.googleapis.com/alan-tutorial/web-sdk/styles.css" rel="stylesheet">
+        <link rel="shortcut icon" href="./favicon/favicon.ico">
+        <link rel="icon" type="image/png" href="./favicon/favicon.png">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <style>
+          /* Custom styles to change font color when sidebar elements are clicked open */
+          details[open] > summary {
+            color: #F59E0B;
+          }
+          body {
+            max-width: 100%;
+            height: auto;
+          }
+        </style>
+    </head>
+   
+    <body class="w-full text-left ">
+      <div class="alan-btn"></div>
+      <!-- SIDEBAR -->
+      <div class="w-full md:w-1/5"> 
+        <div class="flex p-6 justify-left gap-4 ">  
+          <img src="./images/ladle-logo.png" alt="Ladle logo">
+          <img src="./images/Ladle.png" alt="Ladle website name">
+        </div>
+        <div class="max-w-xs h-screen fixed px-8">
+          <h3 class="text-lg font-mono font-bold py-4">Recipes</h3>
+          <section class="max-w-xs m-auto w-full">
+            <details class="w-60">
+              <summary class="tab max-w-xs border-b-2 transition-transform py-1 list-none hover:text-yellow-500">Breakfast</summary>
+              <a href="./tacos.html">
+                <div class="flex flex-row overflow-auto justify-left p-2 gap-4">
+                  <img src="./images/Breakfast Tacos.png" alt="Breakfast tacoes">
+                  <div class="flex flex-col justify-around text-sm">
+                    <p class="font-bold">Breakfast Tacos</p>
+                    <caption>Time: 25 min</caption>
+                  </div>
+                </div>
+              </a>
+            </details>
+            <details class="max-w-xs">
+              <summary class="max-w-xs border-b-2 transition-transform py-1 list-none hover:text-yellow-500">Lunch</summary>
+              <div class="flex flex-row overflow-auto justify-left p-2 gap-2">
+                <img src="./images/Arroz Caldo-1.png" alt="Arroz Caldo, a Filipino chicken and rice dish">
+                <div class="flex flex-col justify-around text-sm">
+                  <p class="font-bold">Arroz Caldo</p>
+                  <caption>Time: 40 min</caption>
+                </div>
+              </div>
+            </details>
+            <details class="max-w-xs">
+              <summary class="max-w-xs border-b-2 transition-transform py-1 list-none hover:text-yellow-500">Mains</summary>
+              <div class="flex flex-row overflow-auto justify-left p-2 gap-2">
+                <img src="./images/Placeholder.png" alt="No recipes has been added for this category">
+                <div class="flex flex-col justify-around text-sm">
+                  <p>You haven't added any mains yet!</p>
+                </div>
+              </div>
+            </details>
+            <details class="max-w-xs">
+              <summary class="max-w-xs border-b-2 transition-transform py-1 list-none hover:text-yellow-500">Sides</summary>
+              <div class="flex flex-row overflow-auto justify-left p-2 gap-2">
+                <img src="./images/Butterhorn Dinner Rolls.png" alt="Butterhorn dinner rolls">
+                <div class="flex flex-col justify-around text-sm">
+                  <p class="font-bold">Butterhorn Dinner Rolls</p>
+                  <caption>Time: 1 hour</caption>
+                </div>
+              </div>
+            </details>
+          </section>
+        </div>
+      </div>
+            
+      <div class="recipe grid grid-cols-8 gap-4 bg-gray-100"">
+        <div class="col-start-3 col-span-5 bg-gray-100 pt-16 px-6">
+          <h1 class="text-2xl font-bold font-serif text-left mx-0 md:mx-12 py-1">Breakfast Tacos</h1>
+          <hr>
+          <div class="">
+
+            <div class="flex flex-col gap-8 md:flex-row">
+              <div class="ingredients-wrapper">
+                <h3 class="ingredients-heading pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7">Ingredients</h3>
+                <ul class="ingredients text-sm font-bold">
+                  <li class="my-2">
+                    <span class="quantity">8</span>
+                    <span class="ingredient-name">eggs</span>
+                  </li>
+                  <li>
+                    <span class="quantity">8</span>
+                    <span class="ingredient-name">corn tortillas</span>
+                  </li>
+                  <li>
+                    <span class="quantity">1 can</span>
+                    <span class="ingredient-name">refried beans</span>
+                  </li>
+                  <li>
+                    <span class="quantity">2</span>
+                    <span class="ingredient-name">avocados</span>
+                  </li>
+                  <li>
+                    <span class="quantity"> </span>
+                    <span class="ingredient-name">red salsa</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="instructions-wrapper">
+                <h3 class="instructions-heading pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7">Preparation</h3>
+                <ul class="">
+                  <li class="my-2">Prepare the refried beans in a large saucepan according to recipe instructions.</li>
+                  <li class="my-2">Meanwhile, as the beans are cooking, go ahead and scramble (see below) or fry the eggs in a non-stick sauté pan.</li>
+                  <li class="my-2">Assemble the tacos by spreading a spoonful of refried beans on a tortilla, top with a spoonful of scrambled eggs, then load it up with avocado, and salsa</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+      <script type="text/javascript" src="app.js"></script>
+
+    </body>
+</html>
