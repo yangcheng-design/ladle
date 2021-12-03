@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Ladle</title>
+        <link href="https://storage.googleapis.com/alan-tutorial/web-sdk/styles.css" rel="stylesheet">
+        <link rel="shortcut icon" href="./favicon/favicon.ico">
+        <link rel="icon" type="image/png" href="./favicon/favicon.png">
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <style>
+          /* Custom styles to change font color when sidebar elements are clicked open */
+          details[open] > summary {
+            color: #F59E0B;
+          }
+          body {
+            max-width: 100%;
+          }
+        </style>
+    </head>
+   
+    <body class="w-full text-left ">
+      <div class="alan-btn"></div>
+      <!-- SIDEBAR -->
+      <div class="w-full md:w-1/5"> 
+        <div class="flex p-6 justify-left gap-4 ">  
+          <img src="./images/ladle-logo.png" alt="Ladle logo">
+          <img src="./images/Ladle.png" alt="Ladle website name">
+        </div>
+        <div class="max-w-xs h-screen fixed px-8">
+          <h3 class="text-lg font-mono font-bold py-4">Recipes</h3>
+          <section class="max-w-xs m-auto w-full">
+            <details class="w-60">
+              <summary class="tab max-w-xs border-b-2 transition-transform py-1 list-none hover:text-yellow-500">Breakfast</summary>
+              <a href="./tacos.html">
+                <div class="flex flex-row overflow-auto justify-left p-2 gap-4">
+                  <img src="./images/Breakfast Tacos.png" alt="Breakfast tacoes">
+                  <div class="flex flex-col justify-around text-sm">
+                    <p class="font-bold">Breakfast Tacos</p>
+                    <caption>Time: 25 min</caption>
+                  </div>
+                </div>
+              </a>
+            </details>
+            <details class="max-w-xs">
+              <summary class="max-w-xs border-b-2 transition-transform py-1 list-none hover:text-yellow-500">Lunch</summary>
+              <div class="flex flex-row overflow-auto justify-left p-2 gap-2">
+                <img src="./images/Arroz Caldo-1.png" alt="Arroz Caldo, a Filipino chicken and rice dish">
+                <div class="flex flex-col justify-around text-sm">
+                  <p class="font-bold">Arroz Caldo</p>
+                  <caption>Time: 40 min</caption>
+                </div>
+              </div>
+            </details>
+            <details class="max-w-xs">
+              <summary class="max-w-xs border-b-2 transition-transform py-1 list-none hover:text-yellow-500">Mains</summary>
+              <div class="flex flex-row overflow-auto justify-left p-2 gap-2">
+                <img src="./images/Placeholder.png" alt="No recipes has been added for this category">
+                <div class="flex flex-col justify-around text-sm">
+                  <p>You haven't added any mains yet!</p>
+                </div>
+              </div>
+            </details>
+            <details class="max-w-xs">
+              <summary class="max-w-xs border-b-2 transition-transform py-1 list-none hover:text-yellow-500">Sides</summary>
+              <div class="flex flex-row overflow-auto justify-left p-2 gap-2">
+                <img src="./images/Butterhorn Dinner Rolls.png" alt="Butterhorn dinner rolls">
+                <div class="flex flex-col justify-around text-sm">
+                  <p class="font-bold">Butterhorn Dinner Rolls</p>
+                  <caption>Time: 1 hour</caption>
+                </div>
+              </div>
+            </details>
+          </section>
+        </div>
+      </div>
+            
+      <div class="recipe grid grid-cols-8 gap-4 bg-gray-100"">
+        <div class="col-start-3 col-span-5 bg-gray-100 pt-16 px-6">
+          <h1 class="text-2xl font-bold font-serif text-left mx-0 md:mx-12 py-1">Butterhorn Dinner Rolls</h1>
+          <hr>
+          <div class="">
+
+            <div class="flex flex-col gap-8 md:flex-row">
+              <div class="ingredients-wrapper">
+                <h3 class="ingredients-heading pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7">Ingredients</h3>
+                <ul class="ingredients text-sm font-bold">
+                  <li class="my-2">
+                    <span class="quantity">0.25 ounces</span>
+                    <span class="ingredient-name">active dry yeast</span>
+                  </li>
+                  <li>
+                    <span class="quantity">½ cup</span>
+                    <span class="ingredient-name">warm water</span>
+                  </li>
+                  <li>
+                    <span class="quantity">½ cup</span>
+                    <span class="ingredient-name">unsalted butter</span>
+                  </li>
+                  <li>
+                    <span class="quantity">1 cup</span>
+                    <span class="ingredient-name">milk</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="instructions-wrapper">
+                <h3 class="instructions-heading pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7">Preparation</h3>
+                <ul class="">
+                  <li class="my-2">Sprinkle yeast onto warm water. Stir gently and let sit until foamy and frothy, 15 to 20 minutes.</li>
+                  <li class="my-2">While the yeast is proofing, place butter in a saucepan with milk and white sugar. Turn heat to medium and cook, stirring occasionally, until butter melts and sugar dissolves, 3 to 4 minutes.</li>
+                  <li class="my-2">Remove from the heat and pour into a large mixing bowl; let cool until just very warm to the touch and about 120 degrees F (49 degrees C), 2 to 3 minutes.</li>
+                  <li class="my-2">Add 3 cups flour, kosher salt, yeast mixture, and egg; mix gently with a spatula until it all comes together and forms a very thick and wet batter.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+      <script type="text/javascript" src="app.js"></script>
+
+    </body>
+</html>
