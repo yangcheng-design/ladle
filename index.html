@@ -7,6 +7,7 @@
         <link href="https://storage.googleapis.com/alan-tutorial/web-sdk/styles.css" rel="stylesheet">
         <link rel="shortcut icon" href="./Assets/favicon/favicon.ico">
         <link rel="icon" type="image/png" href="./Assets/favicon/favicon.png">
+        <!-- Install Tailwind CSS -->
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
         <style>
           /* Custom styles to change font color when sidebar elements are clicked open */
@@ -23,6 +24,7 @@
     <body class="md:flex relative text-left overflow-y-auto overflow-x-hidden">
       <div class="alan-btn"></div>
       <!-- MOBILE MENU -->
+      <!-- Mobile menu hidden for medium-and-up size viewports -->
       <div class="md:hidden bg-yellow-100">
         <button aria-label="Menu" class="mobile-menu-button p-4 focus:bg-gray-300">
           <svg class="h-5 w-5 "xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -39,10 +41,12 @@
           <img class=""src="./Assets/images/Ladle.png" alt="Ladle name">
         </header>
         <!-- NAV -->
+        <!-- Apply slide in and out animation -->
         <div class="sidebar h-screen fixed px-8 absolute inset-y-0 left-0 transform -translate-x-full transform duration-200 ease-in-out md:relative md:translate-x-0">
           <h2 class="text-lg font-mono font-bold py-4 pt-12">Recipes</h2>
           <section class="w-auto">
             <details>
+              <!-- Use summary and details elements for accordion effect -->
               <summary class="pt-2.5 transition-transform py-1 hover:text-yellow-500">Breakfast</summary>
               <a href="./index.html">
                 <div class="flex flex-row overflow-x-hidden justify-left p-2 gap-2">
@@ -55,6 +59,7 @@
               </a>
             </details>
             <details>
+              <!-- Use summary and details elements for accordion effect -->
               <summary class="pt-2.5 transition-transform py-1 hover:text-yellow-500">Lunch</summary>
               <a href="./arroz-caldo.html">
               <div class="flex flex-row overflow-x-hidden justify-left p-2 gap-2">
@@ -67,6 +72,7 @@
               </a>
             </details>
             <details>
+              <!-- Use summary and details elements for accordion effect -->
               <summary class="pt-2.5 transition-transform py-1 hover:text-yellow-500">Mains</summary>
               <div class="flex flex-row overflow-x-hidden justify-left p-2 gap-2">
                 <img src="./Assets/images/Placeholder.png" alt="No recipes has been added for this category">
@@ -76,6 +82,7 @@
               </div>
             </details>
             <details>
+              <!-- Use summary and details elements for accordion effect -->
               <summary class="pt-2.5 transition-transform py-1 hover:text-yellow-500">Sides</summary>
               <a href="./dinner-rolls.html">
               <div class="flex flex-row overflow-x-hidden justify-left p-2 gap-2">
@@ -90,7 +97,8 @@
           </section>
         </div>
       </div>
-            
+
+      <!-- MAIN CONTENT AREA       -->
       <div class="recipe flex-auto gap-4 m-12 pr-8">
         <div class="pt-12 px-6">
           <h1 class="text-2xl font-bold font-serif text-left mx-0 md:mx-12 py-1">Breakfast Tacos</h1>
@@ -139,8 +147,8 @@
       </div>
 
       <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
-      <script type="text/javascript" src="./Assets/app.js"></script>
-      <script type="text/javascript" src="Assets/homepage.js"></script>
+      <script type="text/javascript" src="./Assets/js/app.js"></script>
+      <script type="text/javascript" src="Assets/js/homepage.js"></script>
 
     </body>
 </html>

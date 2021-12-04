@@ -1,12 +1,15 @@
 // app.js
+// Handling commands from voice script
 
 // Get the list of instruction steps and convert into an array
 let steps = Array.from(document.querySelector(".instructions-wrapper").getElementsByTagName("li"));
 
+// Get ingredients on current page on startup
 findIngredients();
 
 var alanBtnInstance = alanBtn({
     key: "6a42915f81bec84a1c380cfb0be7b3f02e956eca572e1d8b807a3e2338fdd0dc/stage", 
+    // Command handlers
     onCommand: function (commandData) {
         if (commandData.command === "sendInstruction") {
             sendInstruction(commandData.firstStep);
@@ -28,6 +31,7 @@ var alanBtnInstance = alanBtn({
 
 let currStepNum = 0;
 
+// Helper function to increment step and return text instruction
 function getNextStep(steps, firstStep) {
     if (firstStep === true) {
         currStepNum == 0;
@@ -40,6 +44,7 @@ function getNextStep(steps, firstStep) {
     return steps[currStepNum].innerText;
 }
 
+// Send current instruction to voice script
 function sendInstruction(firstStep) {
     let currInstruction = getNextStep(steps, firstStep);
     alanBtnInstance.callProjectApi("getInstruction", {"data": currInstruction}, function(error, result) {
@@ -51,6 +56,7 @@ function sendInstruction(firstStep) {
     });
 };
 
+// Apply yellow highlight to active step
 function highlight(){
     for (let i = 0; i < steps.length; i++) {
         steps[i].style.backgroundColor = "#FFF";
@@ -58,16 +64,17 @@ function highlight(){
     steps[currStepNum].style.backgroundColor = "#FFFF99";
 }
 
+// Helper function to get string of ingredients
 function findIngredients() {
     var ingredientNodeList = document.querySelectorAll(".ingredient-name");
     let ingredientNames = "";
     for (let i = 0; i < ingredientNodeList.length; i++) {
         ingredientNames += "|" +ingredientNodeList[i].innerText;
     }
-    // console.log(ingredientNames);
     return ingredientNames;
 }
 
+// Send string of ingredients to voice script
 function sendIngredients() {
     let ingredientDescription = findIngredients();
     alanBtnInstance.callProjectApi("getIngredients", {"data": ingredientDescription}, function(error, result) {
@@ -79,10 +86,7 @@ function sendIngredients() {
 });
 }
 
-function sendQuantity(ingredient) {
-
-}
-
+// Send last step back to voice script
 function sendLastStep() {
     let lastStep = "";
     currStepNum = currStepNum - 1;
