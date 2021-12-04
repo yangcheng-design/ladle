@@ -50,7 +50,7 @@ function sendInstruction(firstStep) {
 
 function highlight(){
     for (let i = 0; i < steps.length; i++) {
-        steps[i].style.backgroundColor = "#F3F4F6";
+        steps[i].style.backgroundColor = "#FFF";
     }
     steps[currStepNum].style.backgroundColor = "#FFFF99";
 }
