@@ -15,26 +15,37 @@
           }
           body {
             max-width: 100%;
-            height: auto;
+            background-color: #fff;
           }
         </style>
     </head>
    
-    <body class="w-full text-left ">
+    <body class="md:flex relative text-left overflow-y-auto overflow-x-hidden">
       <div class="alan-btn"></div>
+      <!-- MOBILE MENU -->
+      <div class="md:hidden bg-yellow-100">
+        <button class="mobile-menu-button p-4 focus:bg-gray-300">
+          <svg class="h-5 w-5 "xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
       <!-- SIDEBAR -->
-      <div class="w-full md:w-1/5"> 
-        <div class="flex p-6 justify-left gap-4 ">  
-          <img src="./Assets/images/ladle-logo.png" alt="Ladle logo">
-          <img src="./Assets/images/Ladle.png" alt="Ladle website name">
-        </div>
-        <div class="max-w-xs h-screen fixed px-8">
-          <h3 class="text-lg font-mono font-bold py-4">Recipes</h3>
-          <section class="max-w-xs m-auto w-full">
-            <details class="w-60">
-              <summary class="tab max-w-xs border-b-2 transition-transform py-1 list-none hover:text-yellow-500">Breakfast</summary>
+      <div class="bg-yellow-100 w-full md:w-1/5">
+        <!-- LOGO -->
+        <header class="flex p-2 gap-4 w-screen md:p-6 md:justify-left">  
+          <img class="" src="./Assets/images/ladle-logo.png" alt="Ladle logo">
+          <img class=""src="./Assets/images/Ladle.png" alt="Ladle website name">
+        </header>
+        <!-- NAV -->
+        <div class="sidebar h-screen fixed px-8 absolute inset-y-0 left-0 transform -translate-x-full transform duration-200 ease-in-out md:relative md:translate-x-0">
+          <h2 class="text-lg font-mono font-bold py-4 pt-12">Recipes</h2>
+          <section class="w-auto">
+            <details>
+              <summary class="pt-2.5 transition-transform py-1 hover:text-yellow-500">Breakfast</summary>
               <a href="./tacos.html">
-                <div class="flex flex-row overflow-auto justify-left p-2 gap-4">
+                <div class="flex flex-row overflow-x-hidden justify-left p-2 gap-2">
                   <img src="./Assets/images/Breakfast Tacos.png" alt="Breakfast tacoes">
                   <div class="flex flex-col justify-around text-sm">
                     <p class="font-bold">Breakfast Tacos</p>
@@ -43,9 +54,9 @@
                 </div>
               </a>
             </details>
-            <details class="max-w-xs">
-              <summary class="max-w-xs border-b-2 transition-transform py-1 list-none hover:text-yellow-500">Lunch</summary>
-              <div class="flex flex-row overflow-auto justify-left p-2 gap-2">
+            <details>
+              <summary class="pt-2.5 transition-transform py-1 hover:text-yellow-500">Lunch</summary>
+              <div class="flex flex-row overflow-x-hidden justify-left p-2 gap-2">
                 <img src="./Assets/images/Arroz Caldo-1.png" alt="Arroz Caldo, a Filipino chicken and rice dish">
                 <div class="flex flex-col justify-around text-sm">
                   <p class="font-bold">Arroz Caldo</p>
@@ -53,18 +64,18 @@
                 </div>
               </div>
             </details>
-            <details class="max-w-xs">
-              <summary class="max-w-xs border-b-2 transition-transform py-1 list-none hover:text-yellow-500">Mains</summary>
-              <div class="flex flex-row overflow-auto justify-left p-2 gap-2">
+            <details>
+              <summary class="pt-2.5 transition-transform py-1 hover:text-yellow-500">Mains</summary>
+              <div class="flex flex-row overflow-x-hidden justify-left p-2 gap-2">
                 <img src="./Assets/images/Placeholder.png" alt="No recipes has been added for this category">
                 <div class="flex flex-col justify-around text-sm">
                   <p>You haven't added any mains yet!</p>
                 </div>
               </div>
             </details>
-            <details class="max-w-xs">
-              <summary class="max-w-xs border-b-2 transition-transform py-1 list-none hover:text-yellow-500">Sides</summary>
-              <div class="flex flex-row overflow-auto justify-left p-2 gap-2">
+            <details>
+              <summary class="pt-2.5 transition-transform py-1 hover:text-yellow-500">Sides</summary>
+              <div class="flex flex-row overflow-x-hidden justify-left p-2 gap-2">
                 <img src="./Assets/images/Butterhorn Dinner Rolls.png" alt="Butterhorn dinner rolls">
                 <div class="flex flex-col justify-around text-sm">
                   <p class="font-bold">Butterhorn Dinner Rolls</p>
@@ -76,13 +87,13 @@
         </div>
       </div>
             
-      <div class="recipe grid grid-cols-8 gap-4 bg-gray-100"">
-        <div class="col-start-3 col-span-5 bg-gray-100 pt-16 px-6">
+      <div class="recipe flex-auto gap-4 m-12 pr-8">
+        <div class="pt-12 px-6">
           <h1 class="text-2xl font-bold font-serif text-left mx-0 md:mx-12 py-1">Breakfast Tacos</h1>
           <hr>
-          <div class="">
+          <div class="pt-4">
 
-            <div class="flex flex-col gap-8 md:flex-row">
+            <div class="flex flex-col gap-12 md:flex-row">
               <div class="ingredients-wrapper">
                 <h3 class="ingredients-heading pt-6 text-base leading-6 font-bold sm:text-lg sm:leading-7">Ingredients</h3>
                 <ul class="ingredients text-sm font-bold">
@@ -90,19 +101,19 @@
                     <span class="quantity">8</span>
                     <span class="ingredient-name">eggs</span>
                   </li>
-                  <li>
+                  <li class="my-2">
                     <span class="quantity">8</span>
                     <span class="ingredient-name">corn tortillas</span>
                   </li>
-                  <li>
+                  <li class="my-2">
                     <span class="quantity">1 can</span>
                     <span class="ingredient-name">refried beans</span>
                   </li>
-                  <li>
+                  <li class="my-2">
                     <span class="quantity">2</span>
                     <span class="ingredient-name">avocados</span>
                   </li>
-                  <li>
+                  <li class="my-2">
                     <span class="quantity"> </span>
                     <span class="ingredient-name">red salsa</span>
                   </li>
@@ -123,6 +134,7 @@
 
       <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
       <script type="text/javascript" src="./Assets/app.js"></script>
+      <script type="text/javascript" src="Assets/homepage.js"></script>
 
     </body>
 </html>
