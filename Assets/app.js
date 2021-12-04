@@ -1,7 +1,7 @@
 // app.js
 
 // Get the list of instruction steps and convert into an array
-var steps = Array.from(document.querySelector(".instructions-wrapper").getElementsByTagName("li"));
+let steps = Array.from(document.querySelector(".instructions-wrapper").getElementsByTagName("li"));
 
 findIngredients();
 
@@ -18,6 +18,9 @@ var alanBtnInstance = alanBtn({
         }
         else if (commandData.command == "getQuantity") {
             sendQuantity(commandData.ingredient);
+        }
+        else if (commandData.command == "getLastStep") {
+            sendLastStep();
         }
     },
     rootEl: document.getElementById("alan-btn"),
@@ -54,6 +57,7 @@ function highlight(){
     }
     steps[currStepNum].style.backgroundColor = "#FFFF99";
 }
+
 function findIngredients() {
     var ingredientNodeList = document.querySelectorAll(".ingredient-name");
     let ingredientNames = "";
@@ -65,7 +69,7 @@ function findIngredients() {
 }
 
 function sendIngredients() {
-   let ingredientDescription = findIngredients();
+    let ingredientDescription = findIngredients();
     alanBtnInstance.callProjectApi("getIngredients", {"data": ingredientDescription}, function(error, result) {
     if (error) {
         console.error(error);
@@ -77,4 +81,28 @@ function sendIngredients() {
 
 function sendQuantity(ingredient) {
 
+}
+
+function sendLastStep() {
+    let lastStep = "";
+    currStepNum = currStepNum - 1;
+    if (currStepNum < 0) {        // if user is already at the first step
+        lastStep = "We are at the first step"; 
+        alanBtnInstance.callProjectApi("getLastStep", {"data": lastStep}, function(error, result) {
+            if (error) {
+                console.error(error);
+                return;
+            }
+            console.log(result);
+        })
+    }
+    lastStep = steps[currStepNum].innerText;
+    highlight();
+    alanBtnInstance.callProjectApi("getLastStep", {"data": lastStep}, function(error, result) {
+        if (error) {
+            console.error(error);
+            return;
+        }
+        console.log(result);
+    })
 }
